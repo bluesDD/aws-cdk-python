@@ -10,7 +10,7 @@ from aws_cdk import core as cdk
 from aws_cdk import core
 
 from src.src_stack import SrcStack
-
+from src.rds import RDSStack
 
 app = core.App()
 SrcStack(app, "SrcStack",
@@ -30,5 +30,6 @@ SrcStack(app, "SrcStack",
 
     # For more information, see https://docs.aws.amazon.com/cdk/latest/guide/environments.html
     )
+RDSStack(app, "rds-stack", env={'region': 'us-east-2'})
 
 app.synth()
